@@ -1,0 +1,33 @@
+#:kivy 1.0.9
+
+<Ball>:
+    size: 50, 50 
+    canvas:
+        Ellipse:
+            pos: self.pos
+            size: self.size          
+
+<Paddle>:
+    size: 200, 25
+    canvas:
+        Rectangle:
+            pos:self.pos
+            size:self.size
+
+<Game>:
+    ball: ball1
+    player1: player_left
+
+    canvas:
+    	Rectangle:
+    		pos: self.center_x-5, 0
+    		size: 0, self.height
+    
+    Ball:
+        id: ball1
+        center: self.parent.center
+        
+    Paddle:
+        id: player_left
+        y: root.y
+        center_x: root.center_x
